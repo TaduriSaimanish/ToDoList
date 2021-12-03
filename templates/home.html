@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block body %} {% if results %}
+<h2>Your Todos</h2>
+<div class="container">
+  <div class="row">
+    {% for result in results %}
+
+    <div class="col-sm-3">
+      <div class="card" style="margin: 10px">
+        <h5 class="card-header">
+          {{result[2].strftime("%d %b %Y - %I:%M %p")}}
+        </h5>
+        <div class="card-body">
+          <h5 class="card-title">{{result[0]}}</h5>
+          <p class="card-text">{{result[1]}}</p>
+          <a href="#" class="btn btn-primary">Check Out</a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endif %} {% endblock body %}
